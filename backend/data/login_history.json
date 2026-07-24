@@ -607,5 +607,12 @@
     "name": "HR Manager",
     "loginTime": "2026-07-23T16:58:55.445Z",
     "ip": "127.0.0.1"
+  },
+  {
+    "userId": "u-lead",
+    "email": "tech_lead_07",
+    "name": "Tech Lead",
+    "loginTime": "2026-07-24T06:36:41.619Z",
+    "ip": "127.0.0.1"
   }
 ]

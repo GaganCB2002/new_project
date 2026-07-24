@@ -8,36 +8,40 @@ echo ==========================================
 echo.
 
 echo [0.5/5] Updating Activity Log...
-node scripts/update-activity.js
+if exist "%~dp0backend\scripts\update-activity.js" (
+    node "%~dp0backend\scripts\update-activity.js"
+) else (
+    echo update-activity.js not found, skipping...
+)
 echo.
 
 echo [0/5] Installing dependencies...
-cd apps\dashboard\backend
+cd /d "%~dp0frontend\apps\dashboard\backend"
 if not exist node_modules (
     echo Installing dashboard backend dependencies...
     call npm install --ignore-scripts
 )
-cd ..\..\..\trackinh
+cd /d "%~dp0backend\trackinh"
 if not exist node_modules (
     echo Installing trackinh dependencies...
     call npm install
 )
-cd ..\apps\agent
+cd /d "%~dp0backend\apps\agent"
 if not exist node_modules (
     echo Installing agent dependencies...
     call npm install --ignore-scripts
 )
-cd ..\..\frontend
+cd /d "%~dp0frontend"
 if not exist node_modules (
     echo Installing frontend dependencies...
     call npm install --ignore-scripts
 )
-cd ..\backend
+cd /d "%~dp0backend"
 if not exist node_modules (
     echo Installing backend dependencies...
     call npm install --ignore-scripts
 )
-cd ..
+cd /d "%~dp0"
 echo.
 
 echo [1/5] Cleaning up existing processes...
@@ -46,12 +50,12 @@ taskkill /F /IM node.exe /T 2>nul
 echo.
 
 echo [2/5] Starting Backend Telemetry Server (port 4000)...
-start "Telemetry Server" /min cmd /k "cd /d "%~dp0apps\dashboard\backend" && npm start"
+start "Telemetry Server" /min cmd /k "cd /d "%~dp0frontend\apps\dashboard\backend" && npm start"
 timeout /t 5 >nul
 echo Backend: OK (http://localhost:4000)
 
 echo [3/5] Starting Unified Services Server (port 5002)...
-start "Unified Services" /min cmd /k "cd /d "%~dp0trackinh" && npm start"
+start "Unified Services" /min cmd /k "cd /d "%~dp0backend\trackinh" && npm start"
 timeout /t 3 >nul
 echo Trackinh: OK (http://localhost:5002)
 

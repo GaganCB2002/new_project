@@ -941,6 +941,14 @@
   "activities": [
     {
       "title": "User Login",
+      "detail": "Authenticated as tech_lead_07 | Device: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 | IP: 127.0.0.1 | Location: Bangalore, IN",
+      "category": "Login",
+      "actor": "Tech Lead",
+      "id": "act-1784875001617",
+      "timestamp": "2026-07-24T06:36:41.617Z"
+    },
+    {
+      "title": "User Login",
       "detail": "Authenticated as hr_mgr_02 | Device: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 | IP: 127.0.0.1 | Location: Bangalore, IN",
       "category": "Login",
       "actor": "HR Manager",
@@ -2530,14 +2538,6 @@
       "actor": "Aarav Mehta",
       "id": "act-1777484120642",
       "timestamp": "2026-04-29T17:35:20.642Z"
-    },
-    {
-      "title": "User Login",
-      "detail": "Authenticated as ceo@worksphere.com | Device: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 | IP: 127.0.0.1 | Location: Bangalore, IN",
-      "category": "Login",
-      "actor": "Aarav Mehta",
-      "id": "act-1777481473215",
-      "timestamp": "2026-04-29T16:51:13.215Z"
     }
   ],
   "assets": [
